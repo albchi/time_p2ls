@@ -1,0 +1,21 @@
+cat Dockerfile
+
+
+# create local Docker image 
+docker build -t i_helloname .
+
+# verify that local Docker image is built
+docker images | grep i_helloname 
+
+#login 
+docker login # lihwen90, W*****
+
+# tag as private ... not sure if necessary
+docker tag i_helloname lihwen90/i_helloname
+
+#  push your local Docker image to hub.docker.com/lihwen90
+docker push lihwen90/i_helloname
+
+#visit Docker Hub on a browser, need to login first
+https://hub.docker.com/repository/docker/lihwen90/i_helloname
+
