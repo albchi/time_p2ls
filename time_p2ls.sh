@@ -6,7 +6,7 @@
 # Date        : 2020/SEPT/19
 # Author      : Albert Chiang
 # 
-# Input : 
+# Input (prompted): 
 #    for current in California, numerial hour, in 24 hour format  
 #    input variable : pdttime
 # 
@@ -27,11 +27,11 @@
 # not necessary to declare variable
 lithtime=0 
 
+echo "this input was read on the commnad line" $1
+
 read -p 'What is PDT hour in 24 hour format? ' pdttime
 
 # use $ to use a variable
-echo "PDT time       " $pdttime
-
 # need double paran for math expressions
 # no space around equal and add signs!
 ((lithtmp=$pdttime+10)) 
@@ -39,6 +39,10 @@ echo "PDT time       " $pdttime
 ((lithtime=$lithtmp%24)) 
 ((singtime=$singtmp%24)) 
 
-echo "tmp time "  $lithtmp
-echo "Lithuania, Israel time "  $lithtime 
-echo "Singapore time "  $singtime 
+
+#echo "tmp time "  $lithtmp
+echo "PDT time               : "  $pdttime
+echo "Lithuania, Israel time : "  $lithtime 
+echo "Singapore time         : "  $singtime 
+
+
